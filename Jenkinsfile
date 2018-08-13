@@ -8,7 +8,7 @@ node{
   }
   stage('Email Notification'){
     mail bcc: '', body: '''ようこそJenkins Emailアラート
-    ありがとうございます。
-    以上です。''', cc: '', from: '', replyTo: '', subject: 'Jenkins Job', to: 'hub4you365@gmail.com'
+ ありがとうございます。
+ 以上です。''', cc: '', from: '', replyTo: '', subject: 'Jenkins Job', to: 'hub4you365@gmail.com'
   }
 }
