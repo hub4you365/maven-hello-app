@@ -6,4 +6,9 @@ node{
     def mvnHome = tool name: 'maven-3', type: 'maven'
     sh "${mvnHome}/bin/mvn package"
   }
+  state('Email Notification'){
+    mail bcc: '', body: '''ようこそJenkins Emailアラート
+    ありがとうございます。
+    以上です。''', cc: '', from: '', replyTo: '', subject: 'Jenkins Job', to: 'hub4you365@gmail.com'
+  }
 }
