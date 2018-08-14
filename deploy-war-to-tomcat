@@ -15,7 +15,7 @@ node{
 
   stage('Deploy to Tomcat'){
     sshagent(['tomcat-dev']) {
-      sh 'scp -o StrictHostKeyChecking=no target/*.jar hub4you365@35.194.191.31:/opt/bitnami/apache-tomcat/webapps'
+      sh 'scp -o StrictHostKeyChecking=no target/*.jar jenkins@35.194.191.31:/opt/bitnami/apache-tomcat/webapps'
     }
   }
 
