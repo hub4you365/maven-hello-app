@@ -13,6 +13,12 @@ node{
     }
   }
 
+  stage('Deploy to Tomcat'){
+    sshagent(['tomcat-dev']) {
+      sh 'scp -o StrictHostKeyChecking=no target/*.jar hub4you365@35.194.191.31:/opt/bitnami/apache-tomcat/webapps'
+    }
+  }
+
   stage('Quality Gate'){
     timeout(time: 1, unit: 'HOURS') {
       def qg = waitForQualityGate()
